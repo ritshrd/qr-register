@@ -10,3 +10,35 @@
 #reader__dashboard_section > div:nth-child(2){
     display: none;
 }*/
+
+.docs{
+    display: none;
+}
+.result{ display: none;}
+.exito{ 
+    color: rgb(37, 105, 194);
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+.guardar{
+    width: 80vw !important;
+    height: 20vw !important;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    
+}
+#html5-qrcode-button-camera-permission {
+    width: 80vw !important;
+    height: 20vw !important;
+    font-size: 0px;
+    
+}
+
+#html5-qrcode-button-camera-permission::before {
+content: "ESCANEAR"; 
+font-size: 20px;
+
+}
