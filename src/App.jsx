@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const [scanResult, setScanResult] = useState(null)
+  const [documentCount, setDocumentCount] = useState(0);
+
 
   useEffect (()=> {
     const scanner = new Html5QrcodeScanner ('reader', {
@@ -59,6 +61,25 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    async function fetchDocumentCount() {
+      try {
+        const response = await fetch('http://localhost:3000/api/getStands1');
+        if (!response.ok) {
+          throw new Error('Failed to fetch document count');
+        }
+        const data = await response.json();
+        setDocumentCount(data.count);
+      } catch (error) {
+        console.error('Error fetching document count:', error);
+      }
+    }
+
+    fetchDocumentCount();
+  }, []);
+
+
+
   return (
     <>
       <div className="App">
@@ -68,6 +89,8 @@ function App() {
         <div id="reader">wsss</div>
         <div>{scanResult}</div>
         <div>test3</div>
+        <h1>Number of documents: {documentCount}</h1>
+
       </div>
     </>
   )
