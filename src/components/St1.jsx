@@ -28,7 +28,7 @@ const St1 = () => {
 
   async function saveQRCodeData(data) {
     try {
-      const response = await fetch('http://localhost:3000/api/stand1', {
+      const response = await fetch('https://backqr.onrender.com/api/stand1', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,16 +60,24 @@ const St1 = () => {
   }
 
  
-
   return (
-    <div className="App">
+    <div className="App2">
       <h1>STAND 1</h1>
-      {scanResult? <div className='exito'>Ok</div> : <></>}
-      <div id="reader">wsss</div>
-      <div className='result'>{scanResult}</div>
+      {scanResult? 
+      <div>
+      <div className='exito'>✅</div>
+      <button className='guardar' onClick={() => window.location.reload(false)}>GUARDAR</button>
 
+      </div>
+      : 
+      <></>
+      
+      }
+      <div id="reader">d</div>
+      <div className='result'>{scanResult}</div>
+      
       <div className='docs'>Number of documents: {documentCount}</div>
-    </div>
+     </div>
   );
 };
 

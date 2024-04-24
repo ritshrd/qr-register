@@ -1,6 +1,5 @@
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 
 const St3 = () => {
   const [scanResult, setScanResult] = useState(null);
@@ -29,7 +28,7 @@ const St3 = () => {
 
   async function saveQRCodeData(data) {
     try {
-      const response = await fetch('https://khp25c5z-3000.brs.devtunnels.ms/api/stand3', {
+      const response = await fetch('https://backqr.onrender.com/api/stand3', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,6 +43,7 @@ const St3 = () => {
       console.error(err);
     }
   }
+
 
   useEffect(() => {
     if (scanResult && isValidUrl(scanResult)) {
@@ -67,15 +67,15 @@ const St3 = () => {
       <h1>STAND 3</h1>
       {scanResult? 
       <div>
-      <div className='exito'>Exito</div>
-      <button className='guardar' onClick={() => window.location.reload(false)}>Guardar</button>
+      <div className='exito'>✅</div>
+      <button className='guardar' onClick={() => window.location.reload(false)}>GUARDAR</button>
 
       </div>
       : 
       <></>
       
       }
-      <div id="reader"></div>
+      <div id="reader">d</div>
       <div className='result'>{scanResult}</div>
       
       <div className='docs'>Number of documents: {documentCount}</div>

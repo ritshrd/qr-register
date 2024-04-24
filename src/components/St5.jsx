@@ -1,7 +1,7 @@
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import { useEffect, useState } from 'react';
 
-const St2 = () => {
+const St5 = () => {
   const [scanResult, setScanResult] = useState(null);
   const [documentCount, setDocumentCount] = useState(0);
 
@@ -28,7 +28,7 @@ const St2 = () => {
 
   async function saveQRCodeData(data) {
     try {
-      const response = await fetch('https://backqr.onrender.com/api/stand2', {
+      const response = await fetch('https://backqr.onrender.com/api/stand5', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,6 +43,7 @@ const St2 = () => {
       console.error(err);
     }
   }
+
 
   useEffect(() => {
     if (scanResult && isValidUrl(scanResult)) {
@@ -60,9 +61,10 @@ const St2 = () => {
   }
 
  
+
   return (
     <div className="App2">
-      <h1>STAND 2</h1>
+      <h1>STAND 5</h1>
       {scanResult? 
       <div>
       <div className='exito'>✅</div>
@@ -81,4 +83,4 @@ const St2 = () => {
   );
 };
 
-export default St2;
+export default St5;
