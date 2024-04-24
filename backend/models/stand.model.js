@@ -16,4 +16,4 @@ const standSchema = new mongoose.Schema({
 },
 { timestamps: true });
 
-module.exports = mongoose.model('Stand', standSchema);
+module.exports = mongoose.model('Stand1', standSchema);
