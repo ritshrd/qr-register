@@ -8,6 +8,8 @@ import St5 from "./components/St5"
 import St6 from "./components/St6"
 import St7 from "./components/St7"
 import St8 from "./components/St8"
+import St9 from "./components/St9"
+import St10 from "./components/St10"
 import Home from "./components/Home"
 
 
@@ -58,6 +60,8 @@ function App() {
           <Route path="/st6" element={<St6 />} />
           <Route path="/st7" element={<St7 />} />
           <Route path="/st8" element={<St8 />} />
+          <Route path="/st9" element={<St9 />} />
+          <Route path="/st10" element={<St10 />} />
         </Routes>
        </div>
     </Router>
