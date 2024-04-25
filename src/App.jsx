@@ -10,6 +10,7 @@ import St7 from "./components/St7"
 import St8 from "./components/St8"
 import Home from "./components/Home"
 
+
 function App() {
   return (
     <Router basename="/">
@@ -46,6 +47,7 @@ function App() {
           </ul>
         </nav>
 
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/st1" element={<St1 />} />
@@ -57,7 +59,7 @@ function App() {
           <Route path="/st7" element={<St7 />} />
           <Route path="/st8" element={<St8 />} />
         </Routes>
-      </div>
+\      </div>
     </Router>
   );
 }
