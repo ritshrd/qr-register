@@ -59,7 +59,7 @@ function App() {
           <Route path="/st7" element={<St7 />} />
           <Route path="/st8" element={<St8 />} />
         </Routes>
-\      </div>
+       </div>
     </Router>
   );
 }

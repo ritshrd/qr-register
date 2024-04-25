@@ -56,3 +56,24 @@ content: "ESCANEAR";
 font-size: 20px;
 
 }
+#html5-qrcode-button-camera-stop{
+    width: 80vw !important;
+    height: 20vw !important;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+}
+#html5-qrcode-button-camera-start{
+    width: 80vw !important;
+    height: 20vw !important;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+}
+#html5-qrcode-select-camera{
+    width: 70vw !important;
+    height: 15vw !important;
+    font-size: 15px;
+    display: block;
+    margin: auto;
+}
