@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 const St1 = () => {
   const [scanResult, setScanResult] = useState(null);
   const [documentCount, setDocumentCount] = useState(0);
+  const [showSuccess, setShowSuccess] = useState(false);
+
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner('reader', {
@@ -16,7 +18,7 @@ const St1 = () => {
     scanner.render(success, error);
 
     function success(result) {
-      scanner.clear();
+      /*scanner.clear();*/
       setScanResult(result);
       saveQRCodeData(result);
     }
@@ -39,6 +41,10 @@ const St1 = () => {
         throw new Error('Failed to save QR code data');
       }
       console.log('QR code data saved successfully');
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 1500);
     } catch (err) {
       console.error(err);
     }
@@ -65,12 +71,13 @@ const St1 = () => {
       <h1>STAND 1</h1>
       {scanResult? 
       <div>
-      <div className='exito'>✅</div>
-      <button className='guardar' onClick={() => window.location.reload(false)}>GUARDAR</button>
+      {showSuccess? <div className='exito'>REGISTRO EXITOSO ✅</div> : null}
+      
+      {/*<button className='guardar' onClick={() => window.location.reload(false)}>GUARDAR</button>*/}
 
       </div>
       : 
-      <></>
+      <> </>
       
       }
       <div id="reader">d</div>
